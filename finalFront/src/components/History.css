@@ -1,0 +1,228 @@
+.history-content {
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 70px);
+  }
+  
+  .history-header {
+    margin-bottom: 20px;
+  }
+  
+  .history-header h1 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin: 0 0 15px 0;
+  }
+  
+  .history-filters {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .search-bar {
+    position: relative;
+    flex: 1;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 10px 15px;
+    padding-right: 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  
+  .search-bar input:focus {
+    border-color: #3498db;
+  }
+  
+  .clear-search {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #7f8c8d;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .month-filter select {
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    outline: none;
+    transition: border-color 0.2s ease;
+    min-width: 200px;
+  }
+  
+  .month-filter select:focus {
+    border-color: #3498db;
+  }
+  
+  .history-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .month-section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+  
+  .month-header {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .month-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .activity-count {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .month-activities {
+    padding: 10px 0;
+  }
+  
+  .activity-item {
+    display: flex;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+  }
+  
+  .activity-item:last-child {
+    border-bottom: none;
+  }
+  
+  .activity-item:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+  
+  .activity-content {
+    flex: 1;
+  }
+  
+  .activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+  }
+  
+  .activity-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  .activity-date {
+    color: #7f8c8d;
+    font-size: 13px;
+    white-space: nowrap;
+    margin-left: 10px;
+  }
+  
+  .activity-details {
+    margin: 5px 0 10px 0;
+    color: #2c3e50;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .activity-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+  }
+  
+  .activity-user {
+    color: #3498db;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  .activity-category {
+    background-color: #f8f9fa;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #7f8c8d;
+  }
+  
+  .no-results {
+    text-align: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .no-results p {
+    color: #7f8c8d;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .history-filters {
+      flex-direction: column;
+    }
+  
+    .month-filter select {
+      width: 100%;
+    }
+  
+    .activity-header {
+      flex-direction: column;
+    }
+  
+    .activity-date {
+      margin-left: 0;
+      margin-top: 5px;
+    }
+  
+    .activity-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+  }
+  
+  

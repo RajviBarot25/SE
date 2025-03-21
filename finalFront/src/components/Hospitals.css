@@ -1,0 +1,189 @@
+.hospitals-content {
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 70px);
+  }
+  
+  .hospitals-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .hospitals-header h1 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .hospitals-search input {
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 300px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  
+  .hospitals-search input:focus {
+    border-color: #3498db;
+  }
+  
+  .hospitals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .hospital-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hospital-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hospital-info {
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .hospital-info h2 {
+    color: #3498db;
+    margin: 0 0 10px 0;
+    font-size: 20px;
+  }
+  
+  .hospital-info p {
+    margin: 5px 0;
+    color: #2c3e50;
+  }
+  
+  .hospital-rooms {
+    padding: 20px;
+  }
+  
+  .hospital-rooms h3 {
+    color: #2c3e50;
+    margin: 0 0 15px 0;
+    font-size: 18px;
+  }
+  
+  .rooms-table-container {
+    overflow-x: auto;
+  }
+  
+  .rooms-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .rooms-table th {
+    text-align: left;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    color: #7f8c8d;
+    font-weight: 600;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  .rooms-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .rooms-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .rooms-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .room-actions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .view-btn,
+  .edit-btn,
+  .delete-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .view-btn {
+    background-color: #3498db;
+    color: rgb(116, 113, 113);
+  }
+  
+  .view-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .edit-btn {
+    background-color: #7d7871;
+    color: rgb(42, 39, 39);
+  }
+  
+  .edit-btn:hover {
+    background-color: #d35400;
+  }
+  
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  .no-results {
+    text-align: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .no-results p {
+    color: #7f8c8d;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .hospitals-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  
+    .hospitals-search input {
+      width: 100%;
+    }
+  
+    .room-actions {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .view-btn,
+    .edit-btn,
+    .delete-btn {
+      width: 100%;
+    }
+  }
+  
+  

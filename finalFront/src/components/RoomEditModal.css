@@ -1,0 +1,339 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+  }
+  
+  .room-edit-modal {
+    background-color: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh; /* Limit height to 90% of viewport height */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: modalFadeIn 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-header {
+    color: white;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0; /* Prevent header from shrinking */
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+  
+  .close-btn:hover {
+    opacity: 1;
+  }
+  
+  .modal-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden; /* Hide overflow for the wrapper */
+  }
+  
+  .modal-content {
+    padding: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    flex: 1;
+  }
+  
+  .modal-footer {
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+    flex-shrink: 0; /* Prevent footer from shrinking */
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #2c3e50;
+    font-size: 14px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 2px 10px rgba(52, 152, 219, 0.2);
+  }
+  
+  .form-group input:disabled,
+  .form-group select:disabled,
+  .form-group textarea:disabled {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+    opacity: 0.8;
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .cancel-btn,
+  .save-btn,
+  .delete-confirm-btn,
+  .close-view-btn,
+  .edit-from-view-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+  }
+  
+  .cancel-btn {
+    background-color: #e0e0e0;
+    color: #2c3e50;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #d0d0d0;
+  }
+  
+  .save-btn {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .save-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .delete-confirm-btn {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .delete-confirm-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  .close-view-btn {
+    background-color: #7f8c8d;
+    color: white;
+  }
+  
+  .close-view-btn:hover {
+    background-color: #6c7a7d;
+  }
+  
+  .edit-from-view-btn {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .edit-from-view-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .delete-confirmation {
+    padding: 10px 0;
+  }
+  
+  .delete-confirmation p {
+    margin: 10px 0;
+    color: #2c3e50;
+  }
+  
+  .room-summary {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  
+  .summary-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .summary-label {
+    font-weight: 500;
+    color: #7f8c8d;
+  }
+  
+  .summary-value {
+    font-weight: 500;
+    color: #2c3e50;
+  }
+  
+  .status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .delete-warning {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #ffecec;
+    border-left: 4px solid #e74c3c;
+    border-radius: 4px;
+  }
+  
+  .delete-warning p {
+    margin: 0;
+    color: #e74c3c;
+    font-weight: 500;
+  }
+  
+  .view-details {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+  }
+  
+  .view-details h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #2c3e50;
+  }
+  
+  .view-details p {
+    margin: 5px 0;
+    color: #2c3e50;
+  }
+  
+  /* Add a spacer at the bottom of the form to ensure content can scroll past the fixed footer */
+  .form-footer-spacer {
+    height: 20px;
+  }
+  
+  /* Scrollbar styling for better UX */
+  .modal-content::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .modal-content::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+  
+  .modal-content::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+  }
+  
+  @media (max-width: 768px) {
+    .room-edit-modal {
+      width: 95%;
+      max-height: 80vh; /* Slightly smaller on mobile for better usability */
+    }
+  
+    .form-row {
+      flex-direction: column;
+      gap: 0;
+    }
+  
+    .modal-actions {
+      flex-direction: column;
+    }
+  
+    .cancel-btn,
+    .save-btn,
+    .delete-confirm-btn,
+    .close-view-btn,
+    .edit-from-view-btn {
+      width: 100%;
+    }
+  
+    /* Increase padding for touch targets on mobile */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 14px;
+    }
+  }
+  
+  

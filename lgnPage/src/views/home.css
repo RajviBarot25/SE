@@ -1,0 +1,18 @@
+.home-container {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.home-text1 {
+  display: inline-block;
+}
+ 
+.home-text2 {
+  display: inline-block;
+  font-size: 40px;
+  font-family: "Spectral";
+}

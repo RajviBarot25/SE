@@ -1,0 +1,67 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
+
+    env:
+      TestUser: "deepanshu"    
+      TEST_EMAIL: "deepans@gmail.com"
+      TEST_PASSWORD: "deepanshu@gmail.com"
+      TEST_HOSP_NAME: "Max Hospital"
+      TEST_HOSP_ADDRESS: "Delhi"
+      MONGO_URI: "mongodb://127.0.0.1:27017/5510g"
+      JWT_SECRET: "abcs1234"
+      API_URL: "http://localhost:3000"
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: ./Backend
+
+      - name: Install jq
+        run: sudo apt-get install jq
+
+      - name: Start Backend Server
+        run: |
+          npm start &
+          sleep 5  # Give server time to start
+        working-directory: ./Backend
+
+      - name: Register Test User and Get Token
+        run: |
+          RESPONSE=$(curl -s -X POST $API_URL/api/v1/register \
+            -H "Content-Type: application/json" \
+            -d '{"email": "'"$TEST_EMAIL"'", "password": "'"$TEST_PASSWORD"'"}')
+
+          echo "Server Response: $RESPONSE"
+          echo "TOKEN=$(echo $RESPONSE | jq -r .token)" >> $GITHUB_ENV
+
+      - name: Run Tests
+        run: npm test
+        working-directory: ./Backend
+        env:
+          AUTH_TOKEN: ${{ env.TOKEN }}
